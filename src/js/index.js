@@ -27,7 +27,7 @@ function createBreed(cats) {
     const markup = cats.map(cat => {
         return `<option>${cat.name}</option>`
     })
-    refs.catsSelection.innerHTML = markup;
+    refs.catsSelection.insertAdjacentHTML('beforeend', markup)
 }
 
 function selectedCat() {
