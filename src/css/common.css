@@ -1,4 +1,5 @@
 body {
+  position: relative;
   box-sizing: border-box;
   background-image: url(../img/bg_cat.jpg);
 }
@@ -21,14 +22,16 @@ img {
   width: 40%;
   height: 40%;
   display: block;
-  margin-top: 10px;
 }
 
 .cat-info {
+  margin-top: 10px;
   display: flex;
   gap: 50px;
   justify-content: center;
   align-items: center;
+  outline: 1px solid #9bc9b8;
+  border-radius: 10px;
 }
 
 .cat-info p {
@@ -52,7 +55,49 @@ img {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 250px;
+  border-radius: 4px;
+  /* outline: 2px solid black; */
+  transform: translate(-50%, -50%);
+}
+
+.modal-text {
+  box-sizing: border-box;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: center;
+}
+
 .is-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+.close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 143px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 32px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.close-btn:is(:hover, :focus) {
+  background-color: rgba(246, 246, 246, 0.3);
 }

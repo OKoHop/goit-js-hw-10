@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
     <link rel="stylesheet" href="./css/common.css" />
   </head>
   <body>
@@ -20,6 +24,18 @@
     </p>
     <div class="cat-info"></div>
 
+    <div class="backdrop">
+      <div class="modal">
+        <h2 class="modal-text">
+          Hello to CatsWorld. Here you can see information about cats.
+        </h2>
+        <button type="button" class="close-btn">
+          <p>See the cats!</p>
+        </button>
+      </div>
+    </div>
+
     <script src="./js/index.js" type="module"></script>
+    <script src="./js/close-modal.js" type="module"></script>
   </body>
 </html>
