@@ -9,6 +9,7 @@ const refs = {
     infoContainer: document.querySelector('.cat-info'),
     loadMsg: document.querySelector('.loader'),
     errMsg: document.querySelector('.error'),
+    backdrop: document.querySelector('.backdrop'),
 };
 const URL = 'https://api.thecatapi.com/v1/breeds';
 const URL_IMG = 'https://api.thecatapi.com/v1/images/search'
@@ -40,8 +41,8 @@ function selectedCat() {
             }
             return showCatImg(cat.id), showCatText(cat.id);
         })
-        refs.loadMsg.classList.add('.visually-hidden');
-    }).cath(showErrMsg);
+        refs.loadMsg.classList.add('visually-hidden');
+    }).catch(showErrMsg);
     ;
 }
 
@@ -50,7 +51,7 @@ function showCatImg(selectedCat) {
         .then(cat => cat.json())
         .then(cat => {
             const markupImg = cat.map(cat => {
-                 return `<img class='catImg' src=${cat.url} alt='${selectedCat} width='500' height='400''>`
+                 return `<img class='catImg' src=${cat.url} alt='${selectedCat}'>`
             })
             refs.infoContainer.innerHTML = markupImg;
         })
